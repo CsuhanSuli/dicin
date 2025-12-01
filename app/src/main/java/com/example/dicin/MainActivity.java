@@ -2,6 +2,7 @@ package com.example.dicin;
 
 
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView[] dices = {dice1,dice2,dice3};
         int speed = 50;
         int[] dicesImg = {R.drawable.dice1,R.drawable.dice2,R.drawable.dice3,R.drawable.dice4,R.drawable.dice5,R.drawable.dice6};
+        int[] soundLinks = {R.raw.horse1,R.raw.horse2,R.raw.horse3,R.raw.horse4,R.raw.horse5};
         Button start = findViewById(R.id.start);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
                     x += horsespeed[i] * speed;
                     horses[i].setTranslationX(x);
                 }
+                MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,soundLinks[(int)(Math.random()*5)]);
+                mediaPlayer.setVolume(50,50);
+                mediaPlayer.start();
             }
         });
         Button reset = findViewById(R.id.reset);
