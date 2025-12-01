@@ -1,6 +1,4 @@
 package com.example.dicin;
-
-
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -21,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //normal movement and gameplay
                 int[] horsespeed = {(int)(Math.random() * 6),(int)(Math.random() * 6),(int)(Math.random() * 6)};
                 for (int i = 0; i < 3; i++)
                 {
@@ -48,10 +51,14 @@ public class MainActivity extends AppCompatActivity {
                     x += horsespeed[i] * speed;
                     horses[i].setTranslationX(x);
                 }
+                //sounds
                 MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,soundLinks[(int)(Math.random()*5)]);
                 mediaPlayer.setVolume(50,50);
                 mediaPlayer.start();
+                //vibration
                 vibrator.vibrate(VibrationEffect.createOneShot(300,200));
+                //notification
+
             }
         });
         Button reset = findViewById(R.id.reset);
