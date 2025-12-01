@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="730dp"
+        android:layout_height="324dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/field" />
+
+    <ImageView
+        android:id="@+id/horse1"
+        android:layout_width="100dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/horse1" />
+
+    <ImageView
+        android:id="@+id/horse2"
+        android:layout_width="100dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horse1"
+        app:srcCompat="@drawable/horse2" />
+
+    <ImageView
+        android:id="@+id/horse3"
+        android:layout_width="100dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="93dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horse2"
+        app:srcCompat="@drawable/horse3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="67dp"
+        android:layout_height="287dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:rotation="92"
+        android:scaleX="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/finish" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="StartRound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/dice1"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="44dp"
+        app:layout_constraintStart_toEndOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/dice1" />
+
+    <ImageView
+        android:id="@+id/dice2"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="168dp"
+        app:layout_constraintStart_toEndOf="@+id/dice1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/dice1" />
+
+    <ImageView
+        android:id="@+id/dice3"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="152dp"
+        app:layout_constraintStart_toEndOf="@+id/dice2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/dice1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
