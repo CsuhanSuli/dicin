@@ -29,30 +29,20 @@ public class MainActivity extends AppCompatActivity {
         ImageView dice2 = findViewById(R.id.dice2);
         ImageView dice3 = findViewById(R.id.dice3);
         ImageView[] dices = {dice1,dice2,dice3};
+        int speed = 50;
+        int[] dicesImg = {R.drawable.dice1,R.drawable.dice2,R.drawable.dice3,R.drawable.dice4,R.drawable.dice5,R.drawable.dice6};
         Button start = findViewById(R.id.start);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int[] horsespeed = {(int)(Math.random() * 6),(int)(Math.random() * 6),(int)(Math.random() * 6)};
-                int[] dices = {R.drawable.dice1,R.drawable.dice2,R.drawable.dice3,R.drawable.dice4,R.drawable.dice5,R.drawable.dice6};
-                dice1.setImageResource(dices[horsespeed[0]]);
-                dice2.setImageResource(dices[horsespeed[1]]);
-                dice3.setImageResource(dices[horsespeed[2]]);
-                int speed = 50;
-                int horse1x = (int) horse1.getTranslationX();
-                horse1x += horsespeed[0]*speed;
-                horse1.setTranslationX(horse1x);
-
-                int horse2x = (int) horse2.getTranslationX();
-                horse2x += horsespeed[1]*speed;
-                horse2.setTranslationX(horse2x);
-
-                int horse3x = (int) horse3.getTranslationX();
-                horse3x += horsespeed[2]*speed;
-                horse3.setTranslationX(horse3x);
-
-
-
+                for (int i = 0; i < 3; i++)
+                {
+                    dices[i].setImageResource(dicesImg[horsespeed[i]]);
+                    int x = (int)horses[i].getTranslationX();
+                    x += horsespeed[i] * speed;
+                    horses[i].setTranslationX(x);
+                }
             }
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
